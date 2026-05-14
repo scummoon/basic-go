@@ -3,30 +3,17 @@ package main
 import "fmt"
 
 func main() {
-	color := "red"
-
-	if color == "red" {
-		fmt.Println("Стоп")
-	} else if color == "yellow" {
-		fmt.Println("Приготовься")
-	} else if color == "green" {
-		fmt.Println("Езжай")
+	year := 2026
+	fmt.Println(year)
+	if isLeapYear(year) {
+		fmt.Println("Год високосный")
 	} else {
-		fmt.Println("Неверный сигнал")
+		fmt.Println("Год не високосный")
 	}
+}
 
-	for i := 10; i < 30; i++ {
-		if i%2 == 0 {
-			fmt.Println(i, "Четное")
-		} else {
-			fmt.Println(i, "Нечетное")
-		}
-	}
-	temp := 11
+func isLeapYear(year int) bool {
+	sum := year%4 == 0 && year%100 != 0 || year%100 == 0
+	return sum
 
-	if temp <= 10 {
-		fmt.Println("Холодно")
-	} else {
-		fmt.Println("Тепло")
-	}
 }
